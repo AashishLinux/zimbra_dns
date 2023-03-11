@@ -1,8 +1,8 @@
 version: "3"
 services:
   zimbra:
-    image: zimbra:v01
-          #    build: .
+    #image: aashish9899/zimbra:v1
+    build: .
     ports:
       - "25:25"
       - "80:80"

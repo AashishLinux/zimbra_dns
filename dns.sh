@@ -13,7 +13,7 @@ domain-needed
 bogus-priv
 strict-order
 server=8.8.8.8
-listen-address=$IPADDRESS
+listen-address=127.0.0.1
 expand-hosts
 domain=$DOMAIN
 mx-host=$DOMAIN,$HOSTNAME,0

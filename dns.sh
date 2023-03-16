@@ -11,12 +11,12 @@ apt-get upgrade -y && apt-get install sudo -y
 echo 'resolvconf resolvconf/linkify-resolvconf boolean false' | debconf-set-selections
 
 # Install dependencies
-apt-get install -y dnsmasq bind9utils ssh netcat-openbsd sudo libidn11 libpcre3 libgmp10 libexpat1 libstdc++6 libperl5.26 libaio1 resolvconf unzip pax sysstat sqlite3 dnsutils iputils-ping w3m gnupg less lsb-release rsyslog net-tools vim tzdata wget iproute2 locales curl
+apt-get install -y dnsmasq bind9utils ssh netcat-openbsd sudo libidn11 libpcre3 libgmp10 libexpat1 libstdc++6 libaio1 resolvconf unzip pax sysstat sqlite3 dnsutils iputils-ping w3m gnupg less lsb-release rsyslog net-tools vim tzdata wget iproute2 locales curl
 
 
 DOMAIN=`hostname -d`;
 HOSTNAME=`hostname -f`;
-IPADDRESS=`hostname -I`;
+IPADDRESS=`curl -s ifconfig.me`;
 
 echo "
 port=53
@@ -24,7 +24,7 @@ domain-needed
 bogus-priv
 strict-order
 server=8.8.8.8
-listen-address=127.0.0.1
+listen-address=$IPADDRESS
 expand-hosts
 domain=$DOMAIN
 mx-host=$DOMAIN,$HOSTNAME,0
@@ -33,7 +33,7 @@ address=/$HOSTNAME/$IPADDRESS
 address=/$DOMAIN/$IPADDRESS
 " >> /etc/dnsmasq.conf
 
-sh -c 'echo nameserver `hostname -i` >> /etc/resolv.conf'
+sh -c "echo nameserver $IPADDRESS  >> /etc/resolv.conf"
 
 
 # Restart Service & Check results configuring DNS Server

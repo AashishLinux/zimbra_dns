@@ -3,17 +3,6 @@ echo ""
 echo -e "[INFO] : Configuring DNS Server"
 sleep 2
 
-# Update and Upgrade Ubuntu
-apt-get update -y && \
-apt-get upgrade -y && apt-get install sudo -y
-
-# Enable install resolvconf
-echo 'resolvconf resolvconf/linkify-resolvconf boolean false' | debconf-set-selections
-
-# Install dependencies
-apt-get install -y bind9 bind9utils ssh netcat-openbsd sudo libidn11 libpcre3 libgmp10 libexpat1 libstdc++6 libaio1 resolvconf unzip pax sysstat sqlite3 dnsutils iputils-ping w3m gnupg less lsb-release rsyslog net-tools vim tzdata wget iproute2 locales curl
-
-
 DOMAIN=`hostname -d`;
 HOSTNAME=`hostname -s`;
 IPADDRESS=`hostname -I`;

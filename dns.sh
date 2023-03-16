@@ -1,7 +1,18 @@
 # Configuring DNS Server ## DNSMASQ
 echo ""
 echo -e "[INFO] : Configuring DNS Server"
-sleep 3
+sleep 2
+
+# Update and Upgrade Ubuntu
+apt-get update -y && \
+apt-get upgrade -y && apt-get install sudo -y
+
+# Enable install resolvconf
+echo 'resolvconf resolvconf/linkify-resolvconf boolean false' | debconf-set-selections
+
+# Install dependencies
+RUN apt-get install -y dnsmasq bind9utils ssh netcat-openbsd sudo libidn11 libpcre3 libgmp10 libexpat1 libstdc++6 libperl5.26 libaio1 resolvconf unzip pax sysstat sqlite3 dnsutils iputils-ping w3m gnupg less lsb-release rsyslog net-tools vim tzdata wget iproute2 locales curl
+
 
 DOMAIN=`hostname -d`;
 HOSTNAME=`hostname -f`;

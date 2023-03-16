@@ -80,6 +80,11 @@ sed -i 's/dnssec-validation yes/dnssec-validation no/g' /etc/bind/named.conf.opt
 # Restart Service & Check results configuring DNS Server
 rm -rf /etc/resolv.conf
 echo $IPADDRESS > /etc/resolv.conf
+> /etc/hosts
+echo "
+127.0.0.1    localhost
+::1          localhost
+$IPADDRESS   $FQDN
 /etc/init.d/named restart
 nslookup $HOSTNAME.$DOMAIN
 dig $DOMAIN mx

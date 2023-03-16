@@ -85,6 +85,7 @@ echo "
 127.0.0.1    localhost
 ::1          localhost
 $IPADDRESS   $FQDN
+" > /etc/hosts
 /etc/init.d/named restart
 nslookup $HOSTNAME.$DOMAIN
 dig $DOMAIN mx

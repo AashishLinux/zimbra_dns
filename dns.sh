@@ -1,4 +1,4 @@
-# Configuring DNS Server
+# Configuring DNS Server ## DNSMASQ
 echo ""
 echo -e "[INFO] : Configuring DNS Server"
 sleep 3

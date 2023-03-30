@@ -17,4 +17,4 @@ tar -xf zcs-8.8.15_GA_4179.UBUNTU20_64.20211118033954.tgz
 echo " ##  NOW RUN
 cd zcs-8.8.15_GA_4179.UBUNTU20_64.20211118033954
 ./install.sh
-""
+"

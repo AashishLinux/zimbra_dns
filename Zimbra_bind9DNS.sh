@@ -79,9 +79,9 @@ sed -i 's/dnssec-validation yes/dnssec-validation no/g' /etc/bind/named.conf.opt
 
 # Restart Service & Check results configuring DNS Server
 rm -rf /etc/resolv.conf
-echo $IPADDRESS > /etc/resolv.conf
-echo 1.1.1.1 >> /etc/resolv.conf
-echo 8.8.8.8 >> /etc/resolv.conf
+echo nameserver $IPADDRESS > /etc/resolv.conf
+echo nameserver 1.1.1.1 >> /etc/resolv.conf
+echo nameserver 8.8.8.8 >> /etc/resolv.conf
 > /etc/hosts
 echo "
 127.0.0.1    localhost

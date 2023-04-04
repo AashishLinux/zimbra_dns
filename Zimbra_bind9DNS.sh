@@ -89,5 +89,8 @@ echo "
 $IPADDRESS   $FQDN
 " > /etc/hosts
 /etc/init.d/named restart
+
+sleep 3
+
 nslookup $HOSTNAME.$DOMAIN
 dig $DOMAIN mx

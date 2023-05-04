@@ -73,6 +73,7 @@ echo '                                        3H )    ; minimum' >> /etc/bind/db
 echo "@         IN      NS      ns1.$DOMAIN." >> /etc/bind/db.$DOMAIN
 echo "@         IN      MX      0 $HOSTNAME.$DOMAIN." >> /etc/bind/db.$DOMAIN
 echo "ns1       IN      A       $IPADDRESS" >> /etc/bind/db.$DOMAIN
+echo "@       IN      A       $IPADDRESS" >> /etc/bind/db.$DOMAIN
 echo "$HOSTNAME IN      A       $IPADDRESS" >> /etc/bind/db.$DOMAIN
 
 sed -i 's/dnssec-validation yes/dnssec-validation no/g' /etc/bind/named.conf.options

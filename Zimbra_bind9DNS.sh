@@ -5,7 +5,7 @@ sleep 2
 
 # Update and Upgrade Ubuntu
 apt-get update -y && \
-apt-get upgrade -y && apt-get install sudo -y
+apt-get upgrade -y && apt-get install sudo screen -y
 
 # Enable install resolvconf
 echo 'resolvconf resolvconf/linkify-resolvconf boolean false' | debconf-set-selections

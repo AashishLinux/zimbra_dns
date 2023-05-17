@@ -1,0 +1,20 @@
+apt update
+
+apt install wget -y
+
+cd /root/
+
+echo DOWNLOADING ZIMBRA TAR
+
+wget download.zextras.com/zcs-9.0.0_OSE_UBUNTU20_latest-zextras.tgz
+
+echo EXTRACTING TAR
+
+tar -xf zcs-9.0.0_OSE_UBUNTU20_latest-zextras.tgz
+
+
+#
+echo " ##  NOW RUN
+cd zcs-9.0.0_OSE_UBUNTU20_latest-zextras
+./install.sh
+"

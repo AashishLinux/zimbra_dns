@@ -15,6 +15,6 @@ tar -xf zcs-9.0.0_OSE_UBUNTU20_latest-zextras.tgz
 
 #
 echo " ##  NOW RUN
-cd zcs-9.0.0_OSE_UBUNTU20_latest-zextras
+cd zcs-9.0.0_ZEXTRAS_20221203.UBUNTU20_64.20221216110431
 ./install.sh
 "
